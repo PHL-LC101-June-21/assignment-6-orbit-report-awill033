@@ -18,8 +18,9 @@ export class AppComponent {
 		let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
 
 		window.fetch(satellitesUrl).then(function (response) {
+			
 			response.json().then(function (data) {
-
+				
 				let fetchedSatellites = data.satellites;
 				// loop over satellites
 				for(let i=0; i < fetchedSatellites.length; i++) {
@@ -31,7 +32,7 @@ export class AppComponent {
 
 				 // make a copy of the sourceList to be shown to the user
 				 this.displayList = this.sourceList.slice(0);
-	  
+				console.log(this.displayList);
 			}.bind(this));
 		}.bind(this));
 
